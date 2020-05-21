@@ -1,6 +1,6 @@
 [package]
 name = "fastlist"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Mark Tiedemann"]
 edition = "2018"
 
