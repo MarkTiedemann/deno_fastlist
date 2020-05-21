@@ -21,9 +21,16 @@ Like [`fastlist`](https://github.com/MarkTiedemann/fastlist), but for [Deno](htt
 :: fictional example output:
 :: exe           | pid | ppid
 [System Process]   0     0
-cmd.exe            0     1
-deno.exe           1     2
+cmd.exe            1     0
+deno.exe           2     1
 ```
+
+## Development
+
+- Install [Microsoft C++ Build Tools
+](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+- Install [Rust](https://rustup.rs/)
+- Run `make`
 
 ## License
 
