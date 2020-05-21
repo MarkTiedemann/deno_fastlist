@@ -1,0 +1,12 @@
+[package]
+name = "fastlist"
+version = "0.0.1"
+authors = ["Mark Tiedemann"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+deno_core = "0.45.0"
+winapi = { version = "0.3", features = ["winerror", "tlhelp32", "handleapi"] }
