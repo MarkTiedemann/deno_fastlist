@@ -1,12 +1,12 @@
 SHELL := cmd.exe
 DENO_VERSION := 1.0.1
-PLUGIN_VERSION := 0.1.0
+PLUGIN_VERSION := 0.2.0
 
 .PHONY: all
-all: fastlist-$(PLUGIN_VERSION).dll fastlist.js deno-$(DENO_VERSION).exe
+all: fastlist-$(PLUGIN_VERSION).dll deno-$(DENO_VERSION).exe
 	deno-$(DENO_VERSION).exe run --unstable --allow-plugin example.ts
 
-fastlist-$(PLUGIN_VERSION).dll: src\lib.rs
+fastlist-$(PLUGIN_VERSION).dll: src\lib.rs Cargo.toml Cargo.lock
 	cargo build --release --target x86_64-pc-windows-msvc
 	move /y target\x86_64-pc-windows-msvc\release\fastlist.dll fastlist-$(PLUGIN_VERSION).dll
 
@@ -15,3 +15,7 @@ deno-$(DENO_VERSION).exe:
 	powershell -c "Expand-Archive -Path deno.zip -DestinationPath ."
 	del /q deno.zip
 	ren deno.exe deno-$(DENO_VERSION).exe
+
+.PHONY: clean
+clean:
+	del fastlist-$(PLUGIN_VERSION).dll
