@@ -2,7 +2,7 @@
 
 **List all running processes on Windows.**
 
-Like [`fastlist`](https://github.com/MarkTiedemann/fastlist), but for [Deno](https://deno.land/). A faster [`tasklist`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist).
+A faster [`tasklist`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist). Like [`fastlist.exe`](https://github.com/MarkTiedemann/fastlist), but for [Deno](https://deno.land/).
 
 For each process, fastlist returns (1) the **process ID**, (2) the **parent process ID**, and (3) the **executable file**.
 
