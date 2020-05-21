@@ -8,13 +8,13 @@ Like [`fastlist`](https://github.com/MarkTiedemann/fastlist), but for [Deno](htt
 
 ## Quickstart
 
-1. Download the plugin:
+1. Download the [`fastlist-0.1.0.dll`](fastlist-0.1.0.dll) plugin:
 
 ```batch
 > curl -Lo fastlist-0.1.0.dll https://raw.githubusercontent.com/MarkTiedemann/deno_fastlist/0.1.0/fastlist.dll
 ```
 
-2. Run the example code:
+2. Run the [`example.ts`](example.ts) code:
 
 ```batch
 > deno run --unstable --allow-plugin https://raw.githubusercontent.com/MarkTiedemann/deno_fastlist/0.1.0/example.ts
