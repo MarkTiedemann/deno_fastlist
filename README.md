@@ -2,19 +2,19 @@
 
 **List all running processes on Windows.**
 
-Like [`fastlist`](https://github.com/MarkTiedemann/fastlist), but for [Deno](https://deno.land/). A faster alternative to [`tasklist`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist).
+Like [`fastlist`](https://github.com/MarkTiedemann/fastlist), but for [Deno](https://deno.land/). A faster [`tasklist`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist).
 
-For each process, fastlist returns (1) the **process ID**, (2) the **parent process ID**, and (3) the name of the **executable file**.
+For each process, fastlist returns (1) the **process ID**, (2) the **parent process ID**, and (3) the **executable file**.
 
 ## Quickstart
 
-1. Download the [`fastlist-0.2.0.dll`](fastlist-0.2.0.dll) plugin:
+1. Download the [`fastlist-0.2.0.dll`](https://github.com/MarkTiedemann/deno_fastlist/blob/master/fastlist-0.2.0.dll) plugin:
 
 ```batch
 > curl -LO https://github.com/MarkTiedemann/deno_fastlist/raw/master/fastlist-0.2.0.dll
 ```
 
-2. Run the [`example.ts`](example.ts) code:
+2. Run the [`example.ts`](./example.ts) code:
 
 ```typescript
 // example.ts
@@ -44,7 +44,7 @@ Deno.close(plugin);
 
 - Install [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 - Install [Rust](https://rustup.rs/)
-- Run [`make`](make.cmd)
+- Run [`make`](./make.cmd)
 
 ## License
 
