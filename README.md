@@ -11,7 +11,7 @@ For each process, fastlist returns (1) the **process ID**, (2) the **parent proc
 1. Download the [`fastlist-0.2.0.dll`](fastlist-0.2.0.dll) plugin:
 
 ```batch
-> curl -O https://raw.githubusercontent.com/MarkTiedemann/deno_fastlist/0.2.0/fastlist-0.2.0.dll
+> curl -LO https://github.com/MarkTiedemann/deno_fastlist/raw/master/fastlist-0.2.0.dll
 ```
 
 2. Run the [`example.ts`](example.ts) code:
