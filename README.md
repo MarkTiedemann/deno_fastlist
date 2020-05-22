@@ -8,20 +8,20 @@ For each process, fastlist returns (1) the **process ID**, (2) the **parent proc
 
 ## Quickstart
 
-1. Download the [`fastlist-0.2.0.dll`](https://github.com/MarkTiedemann/deno_fastlist/blob/master/fastlist-0.2.0.dll) plugin:
+1. Download the [`fastlist-0.3.0.dll`](https://github.com/MarkTiedemann/deno_fastlist/blob/master/fastlist-0.3.0.dll) plugin:
 
 ```batch
-> curl -LO https://github.com/MarkTiedemann/deno_fastlist/raw/master/fastlist-0.2.0.dll
+> curl -LO https://github.com/MarkTiedemann/deno_fastlist/raw/master/fastlist-0.3.0.dll
 ```
 
 2. Run the [`example.ts`](./example.ts) code:
 
 ```typescript
 // example.ts
-import { fastlist } from "https://deno.land/x/fastlist@0.2.0/mod.ts";
+import { fastlist } from "https://deno.land/x/fastlist@0.3.0/mod.ts";
 
 let decoder = new TextDecoder();
-let plugin = Deno.openPlugin("fastlist-0.2.0.dll");
+let plugin = Deno.openPlugin("fastlist-0.3.0.dll");
 for (let [pid, ppid, exe] of fastlist(plugin)) {
   console.log(pid + "\t" + ppid + "\t" + decoder.decode(exe));
 }
@@ -29,7 +29,7 @@ Deno.close(plugin);
 ```
 
 ```batch
-> deno run --unstable --allow-plugin https://deno.land/x/fastlist@0.2.0/example.ts
+> deno run --unstable --allow-plugin https://deno.land/x/fastlist@0.3.0/example.ts
 0       0       [System Process]
 4       0       System
 72      4       Secure System

@@ -1,6 +1,6 @@
 SHELL := cmd.exe
 DENO_VERSION := 1.0.1
-PLUGIN_VERSION := 0.2.0
+PLUGIN_VERSION := 0.3.0
 
 .PHONY: all
 all: fastlist-$(PLUGIN_VERSION).dll deno-$(DENO_VERSION).exe

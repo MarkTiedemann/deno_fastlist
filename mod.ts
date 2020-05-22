@@ -8,13 +8,23 @@ export function fastlist(plugin: number) {
   let res: Uint8Array = Deno.core.dispatch(ops.fastlist);
   let view = new DataView(res.buffer);
   let tasks: Array<[number, number, Uint8Array]> = [];
-  let task_size = 270;
-  for (let i = 0; i < res.length; i += task_size) {
-    tasks.push([
-      view.getUint32(i),
-      view.getUint32(i + 4),
-      res.subarray(i + 10, i + task_size - view.getUint16(i + 8)),
-    ]);
+  for (let i = 0; i < res.length; ) {
+    /*
+     *  Offset | Bytes | Description
+     *  -------|-------|----------------------
+     *  0      | 4     | process ID
+     *  4      | 4     | parent process ID
+     *  8      | 2     | executable length (n)
+     *  10     | n     | executable
+     * */
+    let pid = view.getUint32(i);
+    let ppid = view.getUint32(i + 4);
+    let exe_len = view.getUint16(i + 8);
+    let exe_start = i + 10;
+    let exe_end = exe_start + exe_len;
+    let exe = res.subarray(exe_start, exe_end);
+    tasks.push([pid, ppid, exe]);
+    i = exe_end;
   }
   return tasks;
 }

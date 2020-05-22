@@ -45,16 +45,15 @@ fn op_test_async(
       return Op::Sync(res);
     }
     loop {
-      let pid: [u8; 4] = transmute(entry.th32ProcessID.to_be());
-      let ppid: [u8; 4] = transmute(entry.th32ParentProcessID.to_be());
+      let pid: [u8; 4] = entry.th32ProcessID.to_be_bytes();
+      let ppid: [u8; 4] = entry.th32ParentProcessID.to_be_bytes();
       let exe: [u8; 260] = transmute(entry.szExeFile);
-      let len_exe: [u8; 2] =
-        transmute((exe.iter().rev().position(|&c| c != 0).unwrap_or(0) as u16).to_be());
+      let exe_size: usize = exe.iter().position(|&c| c == 0).unwrap_or(260);
+      let exe_len: [u8; 2] = (exe_size as u16).to_be_bytes();
       vec.extend(pid.iter());
       vec.extend(ppid.iter());
-      vec.extend(len_exe.iter());
-      vec.extend(exe.iter());
-      entry.szExeFile = [0; 260];
+      vec.extend(exe_len.iter());
+      vec.extend(&exe[..exe_size]);
       if Process32Next(snap, &mut entry) == FALSE {
         break;
       }
