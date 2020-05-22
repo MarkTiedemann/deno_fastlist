@@ -8,10 +8,10 @@ For each process, fastlist returns (1) the **process ID**, (2) the **parent proc
 
 ## Quickstart
 
-1. Download the [`fastlist-0.3.0.dll`](https://github.com/MarkTiedemann/deno_fastlist/blob/master/fastlist-0.3.0.dll) plugin:
+1. Download the [`fastlist-0.3.0.dll`](https://github.com/MarkTiedemann/deno_fastlist/blob/0.3.0/fastlist-0.3.0.dll) plugin:
 
 ```batch
-> curl -LO https://github.com/MarkTiedemann/deno_fastlist/raw/master/fastlist-0.3.0.dll
+> curl -LO https://github.com/MarkTiedemann/deno_fastlist/raw/0.3.0/fastlist-0.3.0.dll
 ```
 
 2. Run the [`example.ts`](./example.ts) code:
